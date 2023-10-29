@@ -13,7 +13,7 @@ if ('DeviceMotionEvent' in window) {
     );
 
     // Define a threshold to detect steps (you may need to adjust this)
-    const threshold = 10;
+    const threshold = 1;
 
     // Check if the magnitude exceeds the threshold
     if (magnitude > threshold) {
