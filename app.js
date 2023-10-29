@@ -14,7 +14,7 @@ if ('DeviceMotionEvent' in window) {
     );
 
     // Define a threshold to detect steps (you may need to adjust this)
-    const threshold = 11;
+    const threshold = 13;
     app.innerHTML = `Step count: ${stepCount}. 
     magnitude ${parseFloat(magnitude).toFixed(4)} 
     maxMagnitude ${maxMagnitude}
