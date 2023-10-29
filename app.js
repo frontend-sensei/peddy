@@ -13,13 +13,13 @@ if ('DeviceMotionEvent' in window) {
     );
 
     // Define a threshold to detect steps (you may need to adjust this)
-    const threshold = 0.01;
+    const threshold = 1000;
 
     // Check if the magnitude exceeds the threshold
     if (magnitude > threshold) {
       stepCount++; // Increment step count
       // You can update your UI or do further processing here
-      app.innerHTML = 'Step count:' + stepCount
+      app.innerHTML = `Step count: ${stepCount}. magnitude ${magnitude}. threshold ${threshold}`
 
       console.log('Step count:', stepCount);
     }
