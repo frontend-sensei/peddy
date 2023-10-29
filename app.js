@@ -1,4 +1,5 @@
 let stepCount = 0;
+let maxMagnitude = 0
 const app = document.getElementById('app')
 
 if ('DeviceMotionEvent' in window) {
@@ -14,7 +15,10 @@ if ('DeviceMotionEvent' in window) {
 
     // Define a threshold to detect steps (you may need to adjust this)
     const threshold = 11;
-    app.innerHTML = `Step count: ${stepCount}. magnitude ${magnitude}. threshold ${threshold}`
+    app.innerHTML = `Step count: ${stepCount}. 
+    magnitude ${parseFloat(magnitude).toFixed(4)} 
+    maxMagnitude ${maxMagnitude}
+    threshold ${threshold}`
 
     // Check if the magnitude exceeds the threshold
     if (magnitude > threshold) {
@@ -23,6 +27,8 @@ if ('DeviceMotionEvent' in window) {
 
       console.log('Step count:', stepCount);
     }
+
+    if(maxMagnitude < magnitude) maxMagnitude = magnitude
   });
 } else {
   const message = 'DeviceMotion API not supported on this device.'
